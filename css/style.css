@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Pretendard";
   src: url("../fonts/PretendardVariable.woff2") format("woff2");
-  font-weight: 100 900;
+  font-weight: 100 600;
   font-style: normal;
   font-display: swap;
 }
@@ -10,10 +10,10 @@
   --ink: #151411;
   --paper: #f3f0e7;
   --paper-deep: #e6e0d3;
-  --signal: #ff5a36;
-  --signal-deep: #d83d20;
+  --signal: #da2a38;
+  --signal-deep: #991a25;
   --blue: #9eb7c6;
-  --acid: #d8e66f;
+  --acid: #f5eda8;
   --line: rgba(21, 20, 17, 0.2);
   --page: min(1180px, calc(100vw - 64px));
   --hero-shift: 0px;
@@ -29,7 +29,7 @@ body {
   background: var(--paper);
   font-family: "Pretendard", sans-serif;
   font-size: 18px;
-  line-height: 1.72;
+  line-height: 1.5;
   word-break: keep-all;
   overflow-x: hidden;
 }
@@ -57,7 +57,7 @@ img { display: block; max-width: 100%; }
 .news-logo { position: absolute; left: 50%; top: 50%; display: block; width: 250px; height: 48px; overflow: hidden; transform: translate(-50%,-50%); }
 .news-logo img { width: 100%; height: 100%; object-fit: contain; filter: invert(1); transition: filter .35s; }
 .site-header.is-scrolled .news-logo img { filter: none; }
-.series-name { margin: 0; font-size: 13px; font-weight: 800; letter-spacing: .16em; }
+.series-name { margin: 0; font-size: 13px; font-weight: 800;; }
 .header-actions { margin-left: auto; display: flex; align-items: center; gap: 20px; }
 .source-link { display: inline-flex; align-items: center; gap: 9px; padding: 9px 14px; border: 1px solid currentColor; font-size: 14px; font-weight: 800; text-decoration: none; transition: color .2s, background .2s; }
 .source-link:hover, .source-link:focus-visible { color: var(--ink); background: var(--acid); }
@@ -96,7 +96,8 @@ img { display: block; max-width: 100%; }
 .prologue mark { color: var(--ink); background: var(--acid); padding: 0 .08em; }
 .prologue-inner > p:last-child { max-width: 670px; margin-left: auto; color: rgba(255,255,255,.7); font-size: 20px; }
 .moving-line { overflow: hidden; padding: 17px 0; color: var(--ink); background: var(--acid); font-size: 14px; font-weight: 900; letter-spacing: .13em; white-space: nowrap; }
-.moving-line div { width: max-content; animation: marquee 24s linear infinite; }
+.moving-line div { display: flex; width: max-content; min-width: 100%; animation: marquee 24s linear infinite; }
+.moving-line div span { display: inline-block; flex: 0 0 auto; padding-right: 2.5rem; }
 
 .chapter { padding: 150px 0; }
 .chapter-heading { display: grid; grid-template-columns: 210px 1.5fr 1fr; gap: 40px; align-items: end; margin-bottom: 100px; }
@@ -194,7 +195,7 @@ input[type="range"] { width: 100%; accent-color: var(--ink); cursor: grab; }
 button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid var(--acid); outline-offset: 4px; }
 
 @keyframes scrollDot { 0% { opacity: 0; transform: translate(-50%,0); } 40% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%,13px); } }
-@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes cardSwap { 0% { opacity: .2; transform: translateX(20px); } 100% { opacity: 1; transform: translateX(0); } }
 @keyframes statFlash { 45% { color: var(--acid); transform: scale(1.18); } }
 
