@@ -54,14 +54,6 @@
 
     <main id="main-content">
       <section class="hero" id="top" data-section="top">
-        <img
-          class="hero-image"
-          src="img/story-illustration.png"
-          alt=""
-          aria-hidden="true"
-        />
-        <div class="hero-scrim" aria-hidden="true"></div>
-        <div class="hero-noise" aria-hidden="true"></div>
         <p class="hero-side-note" aria-hidden="true">가족 밖에서 · 제도 밖으로</p>
         <div class="hero-content">
           <p class="hero-kicker">복지의 기준에서 지워진 사람들</p>
@@ -202,42 +194,41 @@
           </p>
         </header>
 
-        <section class="interaction resource-game page-width" aria-labelledby="resourceTitle" data-reveal>
+        <section class="interaction survival-sim page-width" aria-labelledby="resourceTitle" data-reveal>
           <div class="interaction-title light">
             <span>MINI GAME 02</span>
             <div>
-              <h3 id="resourceTitle">첫 72시간을 버텨보세요</h3>
-              <p>시작 자원을 정하고 필요한 조건을 선택하세요. 숫자는 체험을 위한 가상 자원 단위입니다.</p>
+              <h3 id="resourceTitle">집을 나온 뒤, 72시간</h3>
+              <p>다가오는 사건에 선택으로 대응하세요. 모든 것을 지킬 수는 없습니다.</p>
             </div>
           </div>
-          <div class="resource-console">
-            <div class="resource-range-wrap">
-              <label for="resourceRange">
-                내게 남은 시작 자원
-                <output id="resourceValue" for="resourceRange">7칸</output>
-              </label>
-              <input id="resourceRange" type="range" min="4" max="12" value="7" step="1" />
-              <div class="resource-scale" aria-hidden="true"><span>4</span><span>최대 12</span></div>
-              <div class="token-track" id="tokenTrack" aria-hidden="true"></div>
+          <div class="survival-console" id="survivalGame">
+            <div class="game-timeline" aria-label="72시간 진행도">
+              <span class="is-current"><b>0</b><small>출발</small></span>
+              <i></i><span><b>18</b><small>시간</small></span>
+              <i></i><span><b>36</b><small>시간</small></span>
+              <i></i><span><b>54</b><small>시간</small></span>
+              <i></i><span><b>72</b><small>시간</small></span>
             </div>
-            <div class="need-grid" id="needGrid">
-              <button type="button" data-need="room" data-cost="4" aria-pressed="false">
-                <span>잠자리</span><strong>4칸</strong><small>오늘 밤 안전하게 머물 곳</small>
-              </button>
-              <button type="button" data-need="meal" data-cost="3" aria-pressed="false">
-                <span>끼니</span><strong>3칸</strong><small>3일간 최소한의 식사</small>
-              </button>
-              <button type="button" data-need="phone" data-cost="2" aria-pressed="false">
-                <span>연락</span><strong>2칸</strong><small>구직·신청을 위한 통신</small>
-              </button>
-              <button type="button" data-need="document" data-cost="2" aria-pressed="false">
-                <span>서류</span><strong>2칸</strong><small>이동과 복지 신청 준비</small>
-              </button>
+            <div class="survival-status" aria-label="현재 생존 상태">
+              <div><span>안전</span><i><b id="safetyBar"></b></i><output id="safetyValue">60</output></div>
+              <div><span>체력</span><i><b id="energyBar"></b></i><output id="energyValue">65</output></div>
+              <div><span>현금</span><i><b id="cashBar"></b></i><output id="cashValue">45</output></div>
+              <div><span>연결</span><i><b id="networkBar"></b></i><output id="networkValue">20</output></div>
             </div>
-            <output class="game-result" id="gameResult" aria-live="polite">
-              <span>남은 자원 <strong id="remainingValue">7칸</strong></span>
-              <p>필요한 조건을 하나씩 선택해 보세요.</p>
-              <button type="button" id="gameReset">다시 선택하기</button>
+            <div class="scenario-card" id="scenarioCard" aria-live="polite">
+              <div class="scenario-visual" aria-hidden="true"><span id="scenarioIcon">72</span><i></i></div>
+              <div class="scenario-copy">
+                <span id="scenarioStep">SIMULATION</span>
+                <h4 id="scenarioTitle">가방 하나를 들고 집을 나왔습니다.</h4>
+                <p id="scenarioText">현금 4만 5천 원, 충전이 얼마 남지 않은 휴대전화. 오늘 밤부터 직접 선택해야 합니다.</p>
+                <div class="scenario-choices" id="scenarioChoices">
+                  <button class="game-start" type="button" id="gameStart">72시간 시작하기 <b aria-hidden="true">→</b></button>
+                </div>
+              </div>
+            </div>
+            <output class="scenario-feedback" id="scenarioFeedback" aria-live="polite">
+              선택 뒤에는 되돌릴 수 없습니다. 수치는 기사 속 상황을 체험하기 위한 가상 지표입니다.
             </output>
           </div>
         </section>
