@@ -12,7 +12,7 @@
     <meta property="og:description" content="복지 사각지대에 놓인 탈가정 청년" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="img/og.png" />
-    <title>성인이 돼도 끊어낼 수 없는 가족 | 고려대학교 고대신문</title>
+    <title>성인이 돼도 끊어낼 수 없는 가족 | 고대신문</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js" defer></script>
   </head>
@@ -30,7 +30,7 @@
       >
         <img src="img/kunews-logo.png" alt="고대신문" />
       </a>
-      <p class="series-name">INTERACTIVE · 탈가정 청년</p>
+      <p class="series-name">탈가정 청년</p>
       <div class="header-actions">
         <a
           class="source-link"
@@ -57,9 +57,8 @@
         <p class="hero-side-note" aria-hidden="true">가족 밖에서 · 제도 밖으로</p>
         <div class="hero-content">
           <p class="hero-kicker">복지의 기준에서 지워진 사람들</p>
-          <h1>
-            성인이 돼도<br />
-            끊어낼 수 없는 <em>가족</em>
+          <h1 class="hero-title-lockup">
+            <img src="img/title-lockup.svg" alt="성인이 돼도 끊어낼 수 없는 가족" />
           </h1>
           <p class="hero-dek">
             집을 떠났지만 서류는 떠나지 못했다. 폭력과 착취를 피해 나온 청년들은
@@ -97,7 +96,10 @@
       </section>
 
       <div class="moving-line" aria-hidden="true">
-        <div>PHYSICAL SEPARATION IS NOT ADMINISTRATIVE SEPARATION · 물리적 단절은 제도적 단절이 아니다 ·</div>
+        <div>
+          <span>PHYSICAL SEPARATION IS NOT ADMINISTRATIVE SEPARATION · 물리적 단절은 제도적 단절이 아니다 ·</span>
+          <span>PHYSICAL SEPARATION IS NOT ADMINISTRATIVE SEPARATION · 물리적 단절은 제도적 단절이 아니다 ·</span>
+        </div>
       </div>
 
       <section class="chapter chapter-leave" id="leave" data-section="leave">
@@ -113,10 +115,12 @@
         <div class="article-grid page-width">
           <figure class="article-visual" data-reveal>
             <img
-              src="img/story-illustration.png"
-              alt="작은 가방을 든 청년이 고시원 문과 거대한 복지 서류의 벽 사이에 서 있다"
+              src="img/editorial-departure.png"
+              alt="작은 가방을 멘 청년이 어두운 집을 뒤로하고 거리로 나서는 편집 삽화"
+              loading="lazy"
+              decoding="async"
             />
-            <figcaption>집을 떠나도 서류 위에서는 원가정에 묶여 있다.</figcaption>
+            <figcaption>탈가정은 준비된 독립이 아니라 위험을 피해 시작되는 경우가 많다.</figcaption>
           </figure>
           <article class="article-text" data-reveal>
             <p>
@@ -143,7 +147,7 @@
 
         <section class="interaction compare-block page-width" aria-labelledby="compareTitle" data-reveal>
           <div class="interaction-title">
-            <span>INTERACTION 01</span>
+            <span>01</span>
             <div>
               <h3 id="compareTitle">독립과 탈가정, 같은 출발일까요?</h3>
               <p>두 단어를 눌러 출발 조건의 차이를 확인해 보세요.</p>
@@ -194,9 +198,14 @@
           </p>
         </header>
 
+        <figure class="editorial-wide page-width" data-reveal>
+          <img src="img/editorial-goshiwon.png" alt="비좁은 고시원 방에서 컵라면 옆에 홀로 앉은 청년의 편집 삽화" loading="lazy" decoding="async" />
+          <figcaption><span>SCENE 02</span> 보증금을 마련하지 못한 청년은 고시원 같은 열악한 주거로 밀려난다.</figcaption>
+        </figure>
+
         <section class="interaction survival-sim page-width" aria-labelledby="resourceTitle" data-reveal>
           <div class="interaction-title light">
-            <span>MINI GAME 02</span>
+            <span>02</span>
             <div>
               <h3 id="resourceTitle">집을 나온 뒤, 72시간</h3>
               <p>다가오는 사건에 선택으로 대응하세요. 모든 것을 지킬 수는 없습니다.</p>
@@ -205,9 +214,11 @@
           <div class="survival-console" id="survivalGame">
             <div class="game-timeline" aria-label="72시간 진행도">
               <span class="is-current"><b>0</b><small>출발</small></span>
-              <i></i><span><b>18</b><small>시간</small></span>
+              <i></i><span><b>12</b><small>시간</small></span>
+              <i></i><span><b>24</b><small>시간</small></span>
               <i></i><span><b>36</b><small>시간</small></span>
-              <i></i><span><b>54</b><small>시간</small></span>
+              <i></i><span><b>48</b><small>시간</small></span>
+              <i></i><span><b>60</b><small>시간</small></span>
               <i></i><span><b>72</b><small>시간</small></span>
             </div>
             <div class="survival-status" aria-label="현재 생존 상태">
@@ -215,9 +226,15 @@
               <div><span>체력</span><i><b id="energyBar"></b></i><output id="energyValue">65</output></div>
               <div><span>현금</span><i><b id="cashBar"></b></i><output id="cashValue">45</output></div>
               <div><span>연결</span><i><b id="networkBar"></b></i><output id="networkValue">20</output></div>
+              <button class="lifeline-button" type="button" id="lifelineButton">
+                긴급 도움 요청 <b>1회</b>
+              </button>
             </div>
             <div class="scenario-card" id="scenarioCard" aria-live="polite">
-              <div class="scenario-visual" aria-hidden="true"><span id="scenarioIcon">72</span><i></i></div>
+              <div class="scenario-visual" aria-hidden="true">
+                <img id="scenarioImage" src="img/editorial-departure.png" alt="" loading="lazy" decoding="async" />
+                <span id="scenarioIcon">72</span><i></i>
+              </div>
               <div class="scenario-copy">
                 <span id="scenarioStep">SIMULATION</span>
                 <h4 id="scenarioTitle">가방 하나를 들고 집을 나왔습니다.</h4>
@@ -250,9 +267,14 @@
           </p>
         </header>
 
+        <figure class="editorial-wide editorial-wide-dark page-width" data-reveal>
+          <img src="img/editorial-welfare-maze.png" alt="복지 서류로 쌓인 미로 안에서 출구를 찾는 청년의 편집 삽화" loading="lazy" decoding="async" />
+          <figcaption><span>SCENE 04</span> 실제로 가족과 단절했어도 서류 위의 가족관계가 복지의 경로를 가로막는다.</figcaption>
+        </figure>
+
         <section class="interaction gate-simulator page-width" aria-labelledby="gateTitle" data-reveal>
           <div class="interaction-title">
-            <span>SLIDER 03</span>
+            <span>03</span>
             <div>
               <h3 id="gateTitle">복지의 문 앞에서</h3>
               <p>나이 슬라이더와 조건을 움직여 제도의 문턱이 어떻게 달라지는지 확인하세요.</p>
@@ -331,16 +353,17 @@
 
         <section class="interaction region-test page-width" aria-labelledby="regionTitle" data-reveal>
           <div class="interaction-title">
-            <span>INTERACTION 04</span>
+            <span>04</span>
             <div>
               <h3 id="regionTitle">같은 서류, 다른 결과</h3>
               <p>동일한 가상 신청서를 세 지역에 제출해 보세요.</p>
             </div>
           </div>
           <div class="region-layout">
-            <div class="paper-document" aria-hidden="true">
-              <span>세대 분리 신청서</span><strong>동일한 소득·거주·상담 기록</strong><i></i><i></i><i></i><b>申</b>
-            </div>
+            <figure class="region-visual">
+              <img src="img/editorial-office.png" alt="서류를 내미는 청년 앞에 닫힌 행정 창구와 여러 문이 놓인 편집 삽화" loading="lazy" decoding="async" />
+              <figcaption>같은 서류도 지역에 따라 다른 판단을 받을 수 있다.</figcaption>
+            </figure>
             <div class="region-options">
               <button type="button" data-result="승인" data-detail="제출 자료로 생계·주거 독립을 인정했습니다.">
                 <span>가상 지역 A</span><strong>제출하기</strong><small></small>
@@ -370,7 +393,7 @@
 
         <section class="interaction policy-picker page-width" aria-labelledby="policyTitle" data-reveal>
           <div class="interaction-title light">
-            <span>INTERACTION 05</span>
+            <span>05</span>
             <div>
               <h3 id="policyTitle">가장 먼저 바꿔야 할 기준은?</h3>
               <p>하나를 선택해 어떤 변화를 만들 수 있는지 확인하세요.</p>
@@ -400,6 +423,9 @@
 
       <section class="closing" data-reveal>
         <div class="page-width">
+          <figure class="closing-visual">
+            <img src="img/editorial-support.png" alt="여러 사람의 손이 붙잡은 종이길 위로 청년이 열린 문을 향해 걷는 편집 삽화" loading="lazy" decoding="async" />
+          </figure>
           <p>OUTSIDE THE FAMILY FRAME</p>
           <blockquote>
             “조사를 통해 탈가정 청년의 규모와 현실이 확인된다면,
@@ -424,7 +450,7 @@
         <div><span>원문 글</span><strong>임승아 기자</strong></div>
         <div><span>원문 인포그래픽</span><strong>송민경 미디어부장</strong></div>
         <div><span>원문 일러스트</span><strong>전종현 전문기자</strong></div>
-        <div><span>웹 시각물</span><strong>생성형 일러스트</strong></div>
+        <div><span>인터랙티브</span><strong>김성우 기자</strong></div>
         <button type="button" data-target="top">맨 위로 ↑</button>
       </div>
     </footer>

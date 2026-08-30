@@ -110,45 +110,72 @@
 
   const survivalEvents = [
     {
-      hour: 18, icon: "01", step: "18 HOURS · 첫날 밤", title: "밤 11시, 잘 곳을 정해야 합니다.",
+      hour: 12, icon: "12", image: "img/editorial-goshiwon.png", step: "12 HOURS · 첫날 밤", title: "밤 11시, 잘 곳을 정해야 합니다.",
       text: "보증금은 없고 장기 계약은 어렵습니다. 휴대전화 배터리는 19% 남았습니다.",
       choices: [
-        { title: "고시원 하루를 결제한다", hint: "현금 −25 · 안전 +28 · 체력 +12", effects: { cash: -25, safety: 28, energy: 12 }, feedback: "문을 잠글 수 있는 방을 얻었습니다. 하지만 가진 현금의 절반 이상이 사라졌습니다." },
-        { title: "24시간 찜질방으로 간다", hint: "현금 −12 · 안전 +8 · 체력 +5", effects: { cash: -12, safety: 8, energy: 5 }, feedback: "비용은 아꼈지만 짐을 끌어안고 선잠을 잡니다. 내일의 체력이 충분하지 않습니다." }
+        { title: "고시원 하루를 결제한다", hint: "현금 −24 · 안전 +25 · 체력 +10", effects: { cash: -24, safety: 25, energy: 10 }, feedback: "문을 잠글 수 있는 방을 얻었습니다. 하지만 가진 현금의 절반 이상이 사라졌습니다." },
+        { title: "24시간 찜질방으로 간다", hint: "현금 −11 · 안전 +6 · 체력 +3", effects: { cash: -11, safety: 6, energy: 3 }, feedback: "비용은 아꼈지만 짐을 끌어안고 선잠을 잡습니다. 내일 쓸 체력이 충분하지 않습니다." }
       ]
     },
     {
-      hour: 36, icon: "02", step: "36 HOURS · 연결", title: "배터리 6%, 연락 수단이 끊기기 직전입니다.",
-      text: "충전하려면 이동해야 합니다. 그 사이 오늘 먹을 끼니와 구직 시간을 포기해야 할 수도 있습니다.",
+      hour: 24, icon: "24", image: "img/editorial-survival.png", step: "24 HOURS · 배터리 6%", title: "연락 수단이 끊기기 직전입니다.",
+      text: "충전하려면 이동하고 돈을 써야 합니다. 그 사이 끼니와 구직 시간을 포기할 수도 있습니다.",
       choices: [
-        { title: "카페에서 충전하고 지원처를 찾는다", hint: "현금 −10 · 연결 +24 · 체력 −6", effects: { cash: -10, network: 24, energy: -6 }, feedback: "검색 끝에 주거상담 기관 번호를 저장했습니다. 도움을 요청할 수 있는 연결이 하나 생겼습니다." },
-        { title: "전원을 끄고 일자리를 먼저 찾는다", hint: "현금 +14 · 연결 −8 · 체력 −12", effects: { cash: 14, network: -8, energy: -12 }, feedback: "당일 일당을 받았습니다. 대신 지원 정보를 확인할 시간과 연락 가능 시간을 놓쳤습니다." }
+        { title: "카페에서 충전하고 지원처를 찾는다", hint: "현금 −9 · 연결 +22 · 체력 −7", require: { cash: 9 }, effects: { cash: -9, network: 22, energy: -7 }, feedback: "주거상담 기관 번호를 저장했습니다. 도움을 요청할 수 있는 연결이 하나 생겼습니다." },
+        { title: "전원을 끄고 일자리를 먼저 찾는다", hint: "현금 +15 · 연결 −7 · 체력 −14", effects: { cash: 15, network: -7, energy: -14 }, feedback: "당일 일당을 받았습니다. 대신 지원 정보를 확인할 시간을 놓쳤습니다." }
       ]
     },
     {
-      hour: 54, icon: "03", step: "54 HOURS · 복지의 문", title: "주민센터에서 부모의 소득 자료를 요구합니다.",
-      text: "단절을 설명했지만 공적 기록이 부족합니다. 지금 부모에게 연락하면 심사가 빨라질 수 있다고 합니다.",
+      hour: 36, icon: "36", image: "img/editorial-departure.png", step: "36 HOURS · 남겨둔 서류", title: "신분증과 통장을 집에 두고 나왔습니다.",
+      text: "다시 집에 들어가면 비용은 아낄 수 있습니다. 재발급을 택하면 시간과 돈이 듭니다.",
       choices: [
-        { title: "부모에게 다시 연락한다", hint: "안전 −25 · 현금 +18 · 연결 −5", effects: { safety: -25, cash: 18, network: -5 }, feedback: "절차는 한 걸음 빨라졌지만 단절한 가족과 다시 접촉했습니다. 지원의 대가가 안전과 불안으로 돌아옵니다." },
-        { title: "상담기관과 함께 단절을 소명한다", hint: "연결 +28 · 체력 −12 · 현금 −6", effects: { network: 28, energy: -12, cash: -6 }, feedback: "오늘 당장 결정은 나지 않았습니다. 그래도 혼자 설명하던 자리에 조력자가 함께 서게 됐습니다." }
+        { title: "집 근처로 돌아가 서류를 가져온다", hint: "안전 −30 · 체력 −8 · 현금 +7", effects: { safety: -30, energy: -8, cash: 7 }, feedback: "서류는 찾았지만 원가정 근처로 돌아가는 동안 위험과 불안이 다시 커졌습니다." },
+        { title: "재발급 절차를 시작한다", hint: "현금 −12 · 체력 −11 · 연결 +8", require: { cash: 12 }, effects: { cash: -12, energy: -11, network: 8, safety: 3 }, feedback: "하루를 더 써야 하지만 원가정에 돌아가지 않는 경로를 택했습니다." }
       ]
     },
     {
-      hour: 72, icon: "04", step: "72 HOURS · 다음 날", title: "단기 일자리와 주거상담 시간이 겹칩니다.",
+      hour: 48, icon: "48", image: "img/editorial-welfare-maze.png", step: "48 HOURS · 복지의 문", title: "주민센터에서 부모의 소득 자료를 요구합니다.",
+      text: "단절을 설명했지만 공적 기록이 부족합니다. 부모에게 연락하면 심사가 빨라질 수 있다고 합니다.",
+      choices: [
+        { title: "부모에게 다시 연락한다", hint: "안전 −27 · 현금 +17 · 연결 −6", effects: { safety: -27, cash: 17, network: -6 }, feedback: "절차는 빨라졌지만 단절한 가족과 다시 접촉했습니다. 지원의 대가가 불안으로 돌아옵니다." },
+        { title: "상담기관과 함께 단절을 소명한다", hint: "연결 +25 · 체력 −12 · 현금 −6", require: { network: 28 }, effects: { network: 25, energy: -12, cash: -6, safety: 5 }, feedback: "즉시 결정은 나지 않았습니다. 그래도 혼자 설명하던 자리에 조력자가 함께 섰습니다." }
+      ]
+    },
+    {
+      hour: 60, icon: "60", image: "img/editorial-office.png", step: "60 HOURS · 겹친 시간", title: "단기 일자리와 주거상담 시간이 겹칩니다.",
       text: "일을 하면 현금을 확보하지만 상담 예약을 놓칩니다. 상담을 택하면 오늘의 수입은 없습니다.",
       choices: [
-        { title: "일당을 받으러 간다", hint: "현금 +30 · 체력 −25 · 안전 −6", effects: { cash: 30, energy: -25, safety: -6 }, feedback: "현금은 늘었지만 다음 상담은 2주 뒤입니다. 오늘은 버텼고, 제도의 문은 다시 멀어졌습니다." },
-        { title: "주거상담 예약을 지킨다", hint: "연결 +30 · 안전 +14 · 현금 −8", effects: { network: 30, safety: 14, cash: -8 }, feedback: "즉시 입주할 방은 없지만 긴급 주거 절차를 안내받았습니다. 혼자였던 경로에 사람이 연결됐습니다." }
+        { title: "일당을 받으러 간다", hint: "현금 +27 · 체력 −23 · 안전 −5", effects: { cash: 27, energy: -23, safety: -5 }, feedback: "현금은 늘었지만 다음 상담은 2주 뒤입니다. 제도의 문은 다시 멀어졌습니다." },
+        { title: "주거상담 예약을 지킨다", hint: "연결 +27 · 안전 +12 · 현금 −8", require: { network: 38 }, effects: { network: 27, safety: 12, cash: -8, energy: -6 }, feedback: "즉시 입주할 방은 없지만 긴급 주거 절차를 안내받았습니다." }
+      ]
+    },
+    {
+      hour: 72, icon: "72", image: "img/editorial-goshiwon.png", step: "72 HOURS · 마지막 선택", title: "오늘 밤, 값싼 방 하나가 나왔습니다.",
+      text: "잠금장치가 부실하고 계약서도 없습니다. 대기 명단을 선택하면 오늘 밤 거처가 불확실합니다.",
+      choices: [
+        { title: "위험을 감수하고 방을 계약한다", hint: "현금 −20 · 안전 −18 · 체력 +10", require: { cash: 20 }, effects: { cash: -20, safety: -18, energy: 10 }, feedback: "몸을 누일 곳은 생겼지만 안전을 포기한 계약입니다." },
+        { title: "긴급주거 대기 명단에 남는다", hint: "연결 +18 · 체력 −16 · 안전 +5", require: { network: 45 }, effects: { network: 18, energy: -16, safety: 5, cash: -4 }, feedback: "오늘 밤은 불확실하지만 제도 안의 다음 경로를 이어갑니다." },
+        { title: "역 대합실에서 아침을 기다린다", hint: "체력 −20 · 안전 −12 · 현금 −2", effects: { energy: -20, safety: -12, cash: -2 }, feedback: "돈은 아꼈지만 쉴 곳도 짐을 지킬 공간도 없었습니다. 버티는 선택은 안전한 선택이 아닙니다." }
       ]
     }
   ];
-  const initialStats = { safety: 60, energy: 65, cash: 45, network: 20 };
+  const complications = [
+    { text: "돌발 상황: 예상하지 못한 교통비가 들었습니다.", effects: { cash: -6 } },
+    { text: "돌발 상황: 밤샘 뒤 몸살이 시작됐습니다.", effects: { energy: -8 } },
+    { text: "돌발 상황: 휴대전화가 방전돼 연락이 끊겼습니다.", effects: { network: -7 } },
+    { text: "돌발 상황: 공용공간에서 짐 일부를 잃어버렸습니다.", effects: { safety: -7, cash: -4 } }
+  ];
+  const initialStats = { safety: 52, energy: 55, cash: 38, network: 12 };
   let gameStats = { ...initialStats };
   let eventIndex = -1;
   const statNames = { safety: "안전", energy: "체력", cash: "현금", network: "연결" };
   const scenarioCard = document.getElementById("scenarioCard");
   const scenarioChoices = document.getElementById("scenarioChoices");
   const scenarioFeedback = document.getElementById("scenarioFeedback");
+  const scenarioImage = document.getElementById("scenarioImage");
+  const lifelineButton = document.getElementById("lifelineButton");
+  let lifelineUsed = false;
+  let gameRunning = false;
 
   const updateGameStats = (changed = []) => {
     Object.entries(gameStats).forEach(([key, value]) => {
@@ -174,9 +201,11 @@
     });
     lines.forEach((line, index) => line.classList.toggle("is-complete", index < completed));
   };
-  const renderEnding = () => {
+  const requirementText = (requirement) => Object.entries(requirement || {}).map(([key, value]) => `${statNames[key]} ${value} 이상 필요`).join(" · ");
+  const requirementMet = (requirement) => Object.entries(requirement || {}).every(([key, value]) => gameStats[key] >= value);
+  const renderEnding = (early = false) => {
     const weakest = Object.entries(gameStats).sort((a, b) => a[1] - b[1])[0];
-    let title = "아슬아슬하게 맞은 72시간";
+    let title = early ? "72시간을 채우기 전에 멈췄습니다" : "아슬아슬하게 맞은 72시간";
     let text = `가장 위태로운 것은 ${statNames[weakest[0]]}이었습니다. 한 가지를 지킬 때 다른 한 가지가 무너지는 선택이 반복됐습니다.`;
     if (weakest[1] <= 10) {
       title = "경고: 혼자 버티는 방식은 한계에 닿았습니다";
@@ -188,7 +217,10 @@
       title = "결말: 오늘은 벌었지만 내일은 불안합니다";
       text = "당장의 현금은 확보했지만 체력과 연결이 약해졌습니다. 생존을 위해 지원 절차를 계속 미뤄야 하는 현실입니다.";
     }
+    gameRunning = false;
+    lifelineButton.disabled = true;
     scenarioCard.classList.add("ending");
+    scenarioImage.src = "img/editorial-support.png";
     document.getElementById("scenarioIcon").textContent = "72";
     document.getElementById("scenarioStep").textContent = "YOUR ENDING · 72시간 후";
     document.getElementById("scenarioTitle").textContent = title;
@@ -198,25 +230,25 @@
     document.getElementById("gameRestart").addEventListener("click", startGame);
   };
   const chooseScenario = (choice) => {
-    const changed = Object.keys(choice.effects);
+    const changed = new Set(Object.keys(choice.effects));
     changed.forEach((key) => { gameStats[key] += choice.effects[key]; });
-    updateGameStats(changed);
-    scenarioFeedback.innerHTML = `<strong>선택의 결과</strong> · ${choice.feedback}`;
+    let complicationText = "";
+    if (eventIndex > 0 && eventIndex < survivalEvents.length - 1 && Math.random() < .5) {
+      const complication = complications[Math.floor(Math.random() * complications.length)];
+      Object.entries(complication.effects).forEach(([key, value]) => { gameStats[key] += value; changed.add(key); });
+      complicationText = ` <strong>${complication.text}</strong>`;
+    }
+    updateGameStats([...changed]);
+    scenarioFeedback.innerHTML = `<strong>선택의 결과</strong> · ${choice.feedback}${complicationText}`;
     scenarioChoices.querySelectorAll("button").forEach((button) => { button.disabled = true; });
     setTimeout(() => {
+      if (Object.values(gameStats).some((value) => value <= 0)) { renderEnding(true); return; }
       eventIndex += 1;
       if (eventIndex >= survivalEvents.length) renderEnding();
       else renderScenario();
     }, reduceMotion ? 20 : 900);
   };
-  const renderScenario = () => {
-    const event = survivalEvents[eventIndex];
-    scenarioCard.classList.remove("ending", "is-changing");
-    requestAnimationFrame(() => scenarioCard.classList.add("is-changing"));
-    document.getElementById("scenarioIcon").textContent = event.icon;
-    document.getElementById("scenarioStep").textContent = event.step;
-    document.getElementById("scenarioTitle").textContent = event.title;
-    document.getElementById("scenarioText").textContent = event.text;
+  const renderChoices = (event) => {
     scenarioChoices.replaceChildren();
     event.choices.forEach((choice) => {
       const button = document.createElement("button");
@@ -226,20 +258,57 @@
       strong.textContent = choice.title;
       small.textContent = choice.hint;
       button.append(strong, small);
-      button.addEventListener("click", () => chooseScenario(choice));
+      if (!requirementMet(choice.require)) {
+        button.disabled = true;
+        const requirement = document.createElement("span");
+        requirement.className = "requirement";
+        requirement.textContent = `잠김 · ${requirementText(choice.require)}`;
+        button.append(requirement);
+      } else {
+        button.addEventListener("click", () => chooseScenario(choice));
+      }
       scenarioChoices.append(button);
     });
+  };
+  const renderScenario = () => {
+    const event = survivalEvents[eventIndex];
+    scenarioCard.classList.remove("ending", "is-changing");
+    requestAnimationFrame(() => scenarioCard.classList.add("is-changing"));
+    scenarioImage.src = event.image;
+    document.getElementById("scenarioIcon").textContent = event.icon;
+    document.getElementById("scenarioStep").textContent = event.step;
+    document.getElementById("scenarioTitle").textContent = event.title;
+    document.getElementById("scenarioText").textContent = event.text;
+    renderChoices(event);
     scenarioFeedback.textContent = "두 선택 모두 대가가 있습니다. 지금 더 지켜야 할 조건을 선택하세요.";
     updateTimeline(eventIndex + 1);
   };
   function startGame() {
     gameStats = { ...initialStats };
     eventIndex = 0;
+    lifelineUsed = false;
+    gameRunning = true;
+    lifelineButton.disabled = false;
+    lifelineButton.innerHTML = "긴급 도움 요청 <b>1회</b>";
     updateGameStats();
     updateTimeline(0);
     renderScenario();
   }
   document.getElementById("gameStart")?.addEventListener("click", startGame);
+  lifelineButton?.addEventListener("click", () => {
+    if (!gameRunning || lifelineUsed) return;
+    lifelineUsed = true;
+    gameStats.network += 18;
+    gameStats.safety += 12;
+    gameStats.energy -= 8;
+    gameStats.cash -= 4;
+    updateGameStats(["network", "safety", "energy", "cash"]);
+    lifelineButton.disabled = true;
+    lifelineButton.innerHTML = "도움 요청 사용함 <b>0회</b>";
+    scenarioFeedback.innerHTML = "<strong>긴급 도움 요청</strong> · 연결과 안전을 얻었지만 이동과 대기 때문에 체력과 현금을 썼습니다.";
+    if (eventIndex >= 0) renderChoices(survivalEvents[eventIndex]);
+  });
+  lifelineButton.disabled = true;
   updateGameStats();
 
   const ageRange = document.getElementById("ageRange");
