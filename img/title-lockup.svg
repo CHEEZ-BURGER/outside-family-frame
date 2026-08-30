@@ -1,32 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 700" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 960" role="img" aria-labelledby="title desc">
   <title id="title">성인이 돼도 끊어낼 수 없는 가족</title>
   <desc id="desc">검정 바탕 위 주황색 첫 줄과 아이보리색 굵은 글자, 연두색 밑줄로 구성한 신문 편집 타이틀</desc>
   <defs>
     <style>
-      @font-face {
-        font-family: Pretendard;
-        src: url('../fonts/PretendardVariable.woff2') format('woff2');
-        font-weight: 900;
-      }
       .headline {
-        font-family: Pretendard, 'Arial Black', sans-serif;
+        font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
         font-weight: 900;
-        letter-spacing: -11px;
+        letter-spacing: -9px;
         paint-order: stroke fill;
         stroke: #080807;
-        stroke-width: 2.5px;
+        stroke-width: 3px;
         stroke-linejoin: bevel;
       }
       .caption {
-        font-family: Pretendard, sans-serif;
+        font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
         font-weight: 900;
-        letter-spacing: -2px;
+        letter-spacing: -1px;
       }
     </style>
     <filter id="print" x="-8%" y="-8%" width="116%" height="122%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.085" numOctaves="2" seed="19" result="noise"/>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.25" xChannelSelector="R" yChannelSelector="G" result="rough"/>
-      <feDropShadow dx="5" dy="7" stdDeviation="2.4" flood-color="#000000" flood-opacity=".9"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.015 0.11" numOctaves="2" seed="19" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G" result="rough"/>
+      <feDropShadow dx="7" dy="9" stdDeviation="3" flood-color="#000000" flood-opacity=".9"/>
     </filter>
     <filter id="soft-glow" x="-20%" y="-300%" width="140%" height="700%">
       <feGaussianBlur stdDeviation="5"/>
@@ -34,12 +29,14 @@
   </defs>
 
   <g filter="url(#print)">
-    <text class="headline" x="18" y="137" font-size="139" fill="#ff4b27" textLength="682" lengthAdjust="spacingAndGlyphs">성인이 돼도</text>
-    <text class="headline" x="18" y="295" font-size="134" fill="#f5efdf" textLength="718" lengthAdjust="spacingAndGlyphs">끊어낼 수 없는</text>
-    <text class="headline" x="18" y="477" font-size="185" fill="#f5efdf" textLength="316" lengthAdjust="spacingAndGlyphs">가족</text>
+    <g transform="matrix(.72 0 0 1.34 20 -18)">
+      <text class="headline" x="0" y="185" font-size="184" fill="#ff4b27">성인이 돼도</text>
+      <text class="headline" x="0" y="403" font-size="174" fill="#f5efdf">끊어낼 수 없는</text>
+      <text class="headline" x="0" y="630" font-size="230" fill="#f5efdf">가족</text>
+    </g>
   </g>
 
-  <rect x="18" y="526" width="411" height="10" rx="5" fill="#b5d700" opacity=".42" filter="url(#soft-glow)"/>
-  <rect x="18" y="524" width="411" height="8" rx="4" fill="#b8d900"/>
-  <text class="caption" x="20" y="620" font-size="35" fill="#f5efdf" textLength="645" lengthAdjust="spacingAndGlyphs">복지 사각지대 놓인 탈가정 청년</text>
+  <rect x="20" y="826" width="555" height="12" rx="6" fill="#b5d700" opacity=".42" filter="url(#soft-glow)"/>
+  <rect x="20" y="823" width="555" height="9" rx="4.5" fill="#b8d900"/>
+  <text class="caption" x="22" y="912" font-size="40" fill="#f5efdf">복지 사각지대 놓인 탈가정 청년</text>
 </svg>
